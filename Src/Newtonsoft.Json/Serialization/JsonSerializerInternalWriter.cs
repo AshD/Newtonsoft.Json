@@ -27,7 +27,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-#if !(NET35 || NET20 || WINDOWS_PHONE)
+#if !(NET35 || NET20 || WINDOWS_PHONE || MONOTOUCH || MONODROID)
 using System.Dynamic;
 #endif
 using System.Globalization;
@@ -133,7 +133,7 @@ namespace Newtonsoft.Json.Serialization
           JsonDictionaryContract dictionaryContract = (JsonDictionaryContract) valueContract;
           SerializeDictionary(writer, dictionaryContract.CreateWrapper(value), dictionaryContract, member, collectionValueContract);
           break;
-#if !(NET35 || NET20 || WINDOWS_PHONE)
+#if !(NET35 || NET20 || WINDOWS_PHONE || MONOTOUCH || MONODROID)
         case JsonContractType.Dynamic:
           SerializeDynamic(writer, (IDynamicMetaObjectProvider) value, (JsonDynamicContract) valueContract);
           break;
@@ -495,7 +495,7 @@ namespace Newtonsoft.Json.Serialization
     }
 #endif
 
-#if !(NET35 || NET20 || WINDOWS_PHONE)
+#if !(NET35 || NET20 || WINDOWS_PHONE || MONOTOUCH || MONODROID)
     /// <summary>
     /// Serializes the dynamic.
     /// </summary>

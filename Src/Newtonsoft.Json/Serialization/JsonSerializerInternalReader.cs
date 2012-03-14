@@ -27,7 +27,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-#if !(NET35 || NET20 || WINDOWS_PHONE)
+#if !(NET35 || NET20 || WINDOWS_PHONE || MONOTOUCH || MONODROID)
 using System.Dynamic;
 #endif
 using System.Globalization;
@@ -456,7 +456,7 @@ namespace Newtonsoft.Json.Serialization
             return CreateAndPopulateDictionary(reader, dictionaryContract, id);
 
           return PopulateDictionary(dictionaryContract.CreateWrapper(existingValue), reader, dictionaryContract, id);
-#if !(NET35 || NET20 || WINDOWS_PHONE)
+#if !(NET35 || NET20 || WINDOWS_PHONE || MONOTOUCH || MONODROID)
         case JsonContractType.Dynamic:
           JsonDynamicContract dynamicContract = (JsonDynamicContract) contract;
           return CreateDynamic(reader, dynamicContract, id);
@@ -515,7 +515,7 @@ To force JSON arrays to deserialize add the JsonArrayAttribute to the type.".For
     private bool HasDefinedType(Type type)
     {
       return (type != null && type != typeof (object) && !typeof (JToken).IsSubclassOf(type)
-#if !(NET35 || NET20 || WINDOWS_PHONE)
+#if !(NET35 || NET20 || WINDOWS_PHONE || MONOTOUCH || MONODROID)
         && type != typeof (IDynamicMetaObjectProvider)
 #endif
         );
@@ -863,7 +863,7 @@ To force JSON arrays to deserialize add the JsonArrayAttribute to the type.".For
     }
 #endif
 
-#if !(NET35 || NET20 || WINDOWS_PHONE)
+#if !(NET35 || NET20 || WINDOWS_PHONE || MONOTOUCH || MONODROID)
     private object CreateDynamic(JsonReader reader, JsonDynamicContract contract, string id)
     {
       IDynamicMetaObjectProvider newObject = null;

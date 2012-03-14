@@ -1,0 +1,13 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Newtonsoft.Json/Linq/JToken.cs">
+    <Files>
+      <File FileName="Newtonsoft.Json/Linq/JToken.cs" Line="29" Column="14" />
+      <File FileName="Newtonsoft.Json/Converters/XmlNodeConverter.cs" Line="32" Column="18" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

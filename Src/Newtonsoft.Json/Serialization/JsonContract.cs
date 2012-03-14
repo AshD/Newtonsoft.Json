@@ -38,7 +38,7 @@ namespace Newtonsoft.Json.Serialization
     Primitive,
     String,
     Dictionary,
-#if !(NET35 || NET20 || WINDOWS_PHONE)
+#if !(NET35 || NET20 || WINDOWS_PHONE || MONOTOUCH || MONODROID)
     Dynamic,
 #endif
 #if !SILVERLIGHT && !PocketPC

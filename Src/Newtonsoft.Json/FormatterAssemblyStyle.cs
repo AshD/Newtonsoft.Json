@@ -1,4 +1,4 @@
-﻿#if SILVERLIGHT || PocketPC
+﻿#if (SILVERLIGHT || PocketPC) && !(MONOTOUCH || MONODROID)
 namespace System.Runtime.Serialization.Formatters
 {
   /// <summary>
